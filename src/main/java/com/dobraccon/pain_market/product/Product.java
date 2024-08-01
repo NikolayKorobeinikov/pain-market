@@ -9,8 +9,8 @@ public class Product {
 
     public Product(long id, String name, float price, int discount) {
 
-        if (price > 0) {
-            throw new IllegalArgumentException("The price must be more than zero."); // TODO добавить исключение
+        if (price <= 0) {
+            throw new IllegalArgumentException("The price must be more than zero.");
         } else {
             this.price = price;
         }
@@ -18,7 +18,7 @@ public class Product {
         if (discount >= 0 || discount <= 100) {
             this.discount = (int) discount;
         } else {
-            throw new IllegalArgumentException("Discount must be between 0 and 100.");// TODO добавить исключение
+            throw new IllegalArgumentException("Discount must be between 0 and 100.");
         }
         this.id = id;
         this.name = name;
